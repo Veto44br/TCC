@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Loja de roupas e acessórios">
+
+    <title>Urban Wear</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <div class="logo">
+            <a href="index.html">URBAN WEAR</a>
+        </div>
+
+        <nav class="menu" aria-label="Menu principal">
+            <a href="index.html">Início</a>
+            <a href="paginas/produtos.html">Produtos</a>
+            <a href="paginas/galeria.html">Galeria</a>
+            <a href="paginas/localizacao.html">Localização</a>
+        </nav>
+
+        <div class="acoes">
+
+            <a href="paginas/login.html" aria-label="Entrar na conta">
+                👤
+            </a>
+
+            <a href="paginas/carrinho.html" aria-label="Abrir carrinho">
+                🛒
+                <span id="contadorCarrinho">0</span>
+            </a>
+
+            <button 
+                id="botaoMenu"
+                class="botao-menu"
+                aria-label="Abrir menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- BANNER -->
+        <section class="banner">
+
+            <div class="banner-conteudo">
+
+                <p class="banner-subtitulo">
+                    NOVA COLEÇÃO
+                </p>
+
+                <h1>
+                    SEU ESTILO.<br>
+                    SUA IDENTIDADE.
+                </h1>
+
+                <p>
+                    Encontre roupas que combinam com você.
+                </p>
+
+                <a href="paginas/produtos.html" class="botao">
+                    COMPRAR AGORA
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIAS -->
+        <section class="categorias">
+
+            <div class="titulo-secao">
+                <p>EXPLORE</p>
+                <h2>Categorias</h2>
+            </div>
+
+            <div class="categorias-grid">
+
+                <a href="paginas/produtos.html?categoria=masculino" class="categoria">
+                    <div class="categoria-imagem categoria-masculino">
+                        <span>Masculino</span>
+                    </div>
+                </a>
+
+                <a href="paginas/produtos.html?categoria=feminino" class="categoria">
+                    <div class="categoria-imagem categoria-feminino">
+                        <span>Feminino</span>
+                    </div>
+                </a>
+
+                <a href="paginas/produtos.html?categoria=acessorios" class="categoria">
+                    <div class="categoria-imagem categoria-acessorios">
+                        <span>Acessórios</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUTOS EM DESTAQUE -->
+        <section class="produtos-destaque">
+
+            <div class="titulo-secao">
+                <p>CONFIRA</p>
+                <h2>Produtos em destaque</h2>
+            </div>
+
+            <div class="produtos-grid">
+
+                <article class="produto-card">
+
+                    <div class="produto-imagem">
+                        <span>NOVA</span>
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="produto-categoria">
+                            Camisetas
+                        </p>
+
+                        <h3>
+                            Camiseta Oversized
+                        </h3>
+
+                        <p class="produto-preco">
+                            R$ 89,90
+                        </p>
+
+                        <button 
+                            class="botao-carrinho"
+                            data-produto="Camiseta Oversized"
+                            data-preco="89.90">
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto-card">
+
+                    <div class="produto-imagem produto-2">
+                        <span>DESTAQUE</span>
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="produto-categoria">
+                            Calças
+                        </p>
+
+                        <h3>
+                            Calça Cargo
+                        </h3>
+
+                        <p class="produto-preco">
+                            R$ 159,90
+                        </p>
+
+                        <button 
+                            class="botao-carrinho"
+                            data-produto="Calça Cargo"
+                            data-preco="159.90">
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto-card">
+
+                    <div class="produto-imagem produto-3">
+                        <span>OFERTA</span>
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="produto-categoria">
+                            Moletons
+                        </p>
+
+                        <h3>
+                            Moletom Basic
+                        </h3>
+
+                        <p class="produto-preco">
+                            R$ 129,90
+                        </p>
+
+                        <button 
+                            class="botao-carrinho"
+                            data-produto="Moletom Basic"
+                            data-preco="129.90">
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto-card">
+
+                    <div class="produto-imagem produto-4">
+                        <span>NOVA</span>
+                    </div>
+
+                    <div class="produto-info">
+
+                        <p class="produto-categoria">
+                            Acessórios
+                        </p>
+
+                        <h3>
+                            Boné Urban
+                        </h3>
+
+                        <p class="produto-preco">
+                            R$ 69,90
+                        </p>
+
+                        <button 
+                            class="botao-carrinho"
+                            data-produto="Boné Urban"
+                            data-preco="69.90">
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- BENEFÍCIOS -->
+        <section class="beneficios">
+
+            <div class="beneficio">
+                <span>🚚</span>
+                <h3>Entrega rápida</h3>
+                <p>Receba seus produtos com segurança.</p>
+            </div>
+
+            <div class="beneficio">
+                <span>🔒</span>
+                <h3>Compra segura</h3>
+                <p>Seus dados protegidos.</p>
+            </div>
+
+            <div class="beneficio">
+                <span>↩️</span>
+                <h3>Troca fácil</h3>
+                <p>Facilidade para trocar seus produtos.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <div class="rodape-coluna">
+
+            <h2>URBAN WEAR</h2>
+
+            <p>
+                Moda, estilo e personalidade
+                para todos os momentos.
+            </p>
+
+        </div>
+
+
+        <div class="rodape-coluna">
+
+            <h3>Links</h3>
+
+            <a href="index.html">Início</a>
+            <a href="paginas/produtos.html">Produtos</a>
+            <a href="paginas/localizacao.html">Localização</a>
+            <a href="paginas/galeria.html">Galeria</a>
+
+        </div>
+
+
+        <div class="rodape-coluna">
+
+            <h3>Conta</h3>
+
+            <a href="paginas/login.html">Login</a>
+            <a href="paginas/cadastro.html">Cadastro</a>
+            <a href="paginas/carrinho.html">Carrinho</a>
+
+        </div>
+
+
+        <div class="rodape-coluna">
+
+            <h3>Contato</h3>
+
+            <p>contato@urbanwear.com</p>
+            <p>(11) 99999-9999</p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ACESSIBILIDADE -->
+    <button
+        id="botaoAcessibilidade"
+        class="botao-acessibilidade"
+        aria-label="Abrir opções de acessibilidade">
+        ♿
+    </button>
+
+
+    <div 
+        id="painelAcessibilidade"
+        class="painel-acessibilidade"
+        aria-hidden="true">
+
+        <h2>Acessibilidade</h2>
+
+        <button id="aumentarFonte">
+            Aumentar texto
+        </button>
+
+        <button id="diminuirFonte">
+            Diminuir texto
+        </button>
+
+        <button id="altoContraste">
+            Alto contraste
+        </button>
+
+        <button id="lerPagina">
+            🔊 Ler página
+        </button>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
