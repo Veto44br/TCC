@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Urban Wear
+  </title>
+  <link href="../css/style.css" rel="stylesheet"/>
+  <meta content="Loja virtual Urban Wear" name="description"/>
+ </head>
+ <body>
+  <header class="header">
+   <div class="container header-inner">
+    <a class="logo" href="../index.html">
+     URBAN WEAR
+    </a>
+    <nav class="nav" id="nav">
+     <a href="../index.html">
+      Início
+     </a>
+     <a href="../paginas/produtos.html">
+      Loja
+     </a>
+     <a href="../paginas/produtos.html?categoria=Polos">
+      Polos
+     </a>
+     <a href="../paginas/produtos.html?categoria=Moletons">
+      Moletons
+     </a>
+     <a href="../paginas/produtos.html?categoria=Calças">
+      Calças
+     </a>
+     <a href="../paginas/produtos.html?categoria=Jorts">
+      Jorts
+     </a>
+    </nav>
+    <div class="header-actions">
+     <a aria-label="Minha conta" class="icon-btn" href="../paginas/login.html">
+      👤
+     </a>
+     <a aria-label="Carrinho" class="icon-btn" href="../paginas/carrinho.html">
+      🛒
+      <span class="badge" id="cartCount">
+       0
+      </span>
+     </a>
+     <button aria-label="Abrir menu" class="icon-btn mobile-menu" id="menuBtn">
+      ☰
+     </button>
+    </div>
+   </div>
+  </header>
+  <main class="auth-wrap">
+   <form class="auth" id="registerForm">
+    <p class="eyebrow">
+     URBAN WEAR
+    </p>
+    <h1>
+     Criar conta
+    </h1>
+    <div class="form-group">
+     <label>
+      Nome completo
+     </label>
+     <input class="input" id="nome" required=""/>
+    </div>
+    <div class="form-group">
+     <label>
+      E-mail
+     </label>
+     <input class="input" id="email" required="" type="email"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Senha
+     </label>
+     <input class="input" id="senha" minlength="6" required="" type="password"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Confirmar senha
+     </label>
+     <input class="input" id="confirmar" minlength="6" required="" type="password"/>
+    </div>
+    <button class="btn wide">
+     Cadastrar
+    </button>
+    <p class="muted" style="margin-top:16px;text-align:center">
+     Já possui conta?
+     <a href="login.html">
+      <u>
+       Entrar
+      </u>
+     </a>
+    </p>
+   </form>
+  </main>
+  <footer class="footer">
+   <div class="container footer-grid">
+    <div>
+     <h2>
+      URBAN WEAR
+     </h2>
+     <p class="muted">
+      Moda urbana, identidade e atitude.
+     </p>
+    </div>
+    <div>
+     <b>
+      Loja
+     </b>
+     <p>
+      <a href="../paginas/produtos.html">
+       Produtos
+      </a>
+     </p>
+     <p>
+      <a href="../paginas/carrinho.html">
+       Carrinho
+      </a>
+     </p>
+     <p>
+      <a href="../paginas/login.html">
+       Minha conta
+      </a>
+     </p>
+    </div>
+    <div>
+     <b>
+      Ajuda
+     </b>
+     <p>
+      <a href="../paginas/localizacao.html">
+       Localização
+      </a>
+     </p>
+     <p>
+      Trocas e devoluções
+     </p>
+     <p>
+      Pagamento seguro
+     </p>
+    </div>
+    <div>
+     <b>
+      Acessibilidade
+     </b>
+     <p>
+      Fonte ampliada
+     </p>
+     <p>
+      Alto contraste
+     </p>
+    </div>
+   </div>
+  </footer>
+  <div class="access">
+   <div class="access-panel" id="accessPanel">
+    <b>
+     Acessibilidade
+    </b>
+    <button onclick="changeFont(1)">
+     Aumentar fonte
+    </button>
+    <button onclick="changeFont(-1)">
+     Diminuir fonte
+    </button>
+    <button onclick="toggleContrast()">
+     Alto contraste
+    </button>
+   </div>
+   <button aria-label="Acessibilidade" id="accessBtn">
+    ♿
+   </button>
+  </div>
+  <script src="../js/produtos.js">
+  </script>
+  <script src="../js/app.js">
+  </script>
+ </body>
+</html>
