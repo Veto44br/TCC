@@ -326,15 +326,16 @@ const PRODUTOS = [
     },
     {
         "id": 13,
-        "slug": "blusa_preta_ombro_a_ombro",
-        "nome": "Blusa Preta Ombro a Ombro",
+        "slug": "blusa_feminina_preta",
+        "nome": "Blusa Feminina Preta",
         "categoria": "Blusas",
         "preco": 99.9,
         "precoAnterior": 124.88,
         "descricao": "Blusa preta de manga longa com decote ombro a ombro, modelagem justa e visual versátil para compor looks urbanos.",
         "imagens": [
-            "blusa_preta_gola.jpg",
-            "calca_preta_utility.jpg"
+            "blusa_feminina_preta.jpg",
+            "blusa_feminina_preta_costas.jpg",
+            "blusa_preta_feminina_ga.jpg"
         ],
         "modelo": null,
         "cores": [
