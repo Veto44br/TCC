@@ -4,16 +4,16 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   Urban Wear
+   ALT WEAR
   </title>
   <link href="../css/style.css" rel="stylesheet"/>
-  <meta content="Loja virtual Urban Wear" name="description"/>
+  <meta content="Loja virtual ALT WEAR" name="description"/>
  </head>
  <body>
   <header class="header">
    <div class="container header-inner">
     <a class="logo" href="../index.html">
-     URBAN WEAR
+     ALT WEAR
     </a>
     <nav class="nav" id="nav">
      <a href="../index.html">
@@ -31,12 +31,12 @@
      <a href="../paginas/produtos.html?categoria=Calças">
       Calças
      </a>
-     <a href="../paginas/produtos.html?categoria=Jorts">
-      Jorts
+     <a href="../paginas/produtos.html?categoria=Bermudas">
+      Bermudas
      </a>
     </nav>
     <div class="header-actions">
-     <a aria-label="Minha conta" class="icon-btn" href="../paginas/login.html">
+     <a aria-label="Minha conta" class="icon-btn" href="../paginas/perfil.html">
       👤
      </a>
      <a aria-label="Carrinho" class="icon-btn" href="../paginas/carrinho.html">
@@ -62,7 +62,7 @@
        Galeria
       </h1>
       <p class="muted">
-       Looks e peças da coleção Urban Wear.
+       Looks e peças da coleção ALT WEAR.
       </p>
      </div>
     </div>
@@ -70,87 +70,54 @@
     </div>
    </div>
   </main>
-  <footer class="footer">
-   <div class="container footer-grid">
-    <div>
-     <h2>
-      URBAN WEAR
-     </h2>
-     <p class="muted">
-      Moda urbana, identidade e atitude.
-     </p>
+  
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <h2>ALT WEAR</h2>
+            <p class="muted">Moda urbana, identidade e atitude.</p>
+        </div>
+
+        <div>
+            <b>Loja</b>
+            <p><a href="../paginas/produtos.html">Produtos</a></p>
+            <p><a href="../paginas/carrinho.html">Carrinho</a></p>
+            <p><a href="../paginas/perfil.html">Minha conta</a></p>
+        </div>
+
+        <div>
+            <b>Ajuda</b>
+            <p><a href="../paginas/localizacao.html">Localização</a></p>
+            <p><a href="../paginas/devolucoes.html">Trocas e devoluções</a></p>
+            <p><a href="../paginas/carrinho.html#pagamento">Pagamento seguro</a></p>
+        </div>
+
+        <div>
+            <b>Acessibilidade</b>
+            <p><button class="footer-link" type="button" data-access-open="true">Abrir recursos</button></p>
+        </div>
     </div>
-    <div>
-     <b>
-      Loja
-     </b>
-     <p>
-      <a href="../paginas/produtos.html">
-       Produtos
-      </a>
-     </p>
-     <p>
-      <a href="../paginas/carrinho.html">
-       Carrinho
-      </a>
-     </p>
-     <p>
-      <a href="../paginas/login.html">
-       Minha conta
-      </a>
-     </p>
-    </div>
-    <div>
-     <b>
-      Ajuda
-     </b>
-     <p>
-      <a href="../paginas/localizacao.html">
-       Localização
-      </a>
-     </p>
-     <p>
-      Trocas e devoluções
-     </p>
-     <p>
-      Pagamento seguro
-     </p>
-    </div>
-    <div>
-     <b>
-      Acessibilidade
-     </b>
-     <p>
-      Fonte ampliada
-     </p>
-     <p>
-      Alto contraste
-     </p>
-    </div>
-   </div>
-  </footer>
-  <div class="access">
-   <div class="access-panel" id="accessPanel">
-    <b>
-     Acessibilidade
-    </b>
-    <button onclick="changeFont(1)">
-     Aumentar fonte
+</footer>
+
+<div class="access" id="accessibilityWidget">
+    <button class="access-main" type="button" id="accessBtn" aria-expanded="false" aria-controls="accessPanel">
+        ♿ <span>Acessibilidade</span>
     </button>
-    <button onclick="changeFont(-1)">
-     Diminuir fonte
-    </button>
-    <button onclick="toggleContrast()">
-     Alto contraste
-    </button>
-   </div>
-   <button aria-label="Acessibilidade" id="accessBtn">
-    ♿
-   </button>
-  </div>
-  <script src="../js/produtos.js">
+
+    <div class="access-panel" id="accessPanel" aria-hidden="true">
+        <div class="access-title">Recursos de acessibilidade</div>
+        <button type="button" data-access-action="read">🔊 Ler o texto</button>
+        <button type="button" data-access-action="links">🔗 Destacar links</button>
+        <button type="button" data-access-action="font">A+ Aumentar</button>
+        <button type="button" data-access-action="spacing">↔ Espaçamento</button>
+        <button type="button" data-access-action="contrast">◐ Alto contraste</button>
+        <button type="button" data-access-action="reset">↺ Restaurar</button>
+    </div>
+</div>
+<script src="../js/produtos.js">
   </script>
-  <script src="../js/app.js">
+  <script src="../js/database.js"></script>
+    <script src="../js/app.js">
   </script>
  </body>
 </html>

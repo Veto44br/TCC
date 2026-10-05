@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocas e devoluções — ALT WEAR</title>
+    <meta name="description" content="Acompanhe trocas, devoluções e reembolsos da ALT WEAR.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">ALT WEAR</a>
+            <nav class="nav" id="nav">
+                <a href="../index.html">Início</a>
+                <a href="../paginas/produtos.html">Loja</a>
+                <a href="../paginas/produtos.html?categoria=Polos">Polos</a>
+                <a href="../paginas/produtos.html?categoria=Moletons">Moletons</a>
+                <a href="../paginas/produtos.html?categoria=Calças">Calças</a>
+                <a href="../paginas/produtos.html?categoria=Jaquetas">Jaquetas</a>
+            </nav>
+            <div class="header-actions">
+                <a class="icon-btn" href="../paginas/perfil.html" aria-label="Minha conta">👤</a>
+                <a class="icon-btn" href="../paginas/carrinho.html" aria-label="Carrinho">🛒<span class="badge" id="cartCount">0</span></a>
+                <button class="icon-btn mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">ATENDIMENTO</p>
+                    <h1>Trocas, devoluções e reembolsos</h1>
+                    <p class="muted">Acompanhe solicitações e consulte as regras da loja.</p>
+                </div>
+                <a class="btn btn-outline" href="perfil.html">← Voltar ao perfil</a>
+            </div>
+
+            <div class="return-grid">
+                <section class="return-card">
+                    <span class="return-icon">↩</span>
+                    <h2>Solicitar devolução</h2>
+                    <p>Selecione um pedido entregue e informe o motivo da devolução. Nesta versão acadêmica, a solicitação é registrada no navegador.</p>
+                    <button class="btn" id="requestReturnButton" type="button">Solicitar devolução</button>
+                </section>
+
+                <section class="return-card">
+                    <span class="return-icon">R$</span>
+                    <h2>Reembolso</h2>
+                    <p>Veja o status de reembolsos já solicitados e a forma de pagamento utilizada.</p>
+                    <a class="btn" href="#returnsList">Ver status</a>
+                </section>
+            </div>
+
+            <section class="profile-section">
+                <div class="section-head compact">
+                    <div>
+                        <p class="eyebrow">HISTÓRICO</p>
+                        <h2>Minhas solicitações</h2>
+                    </div>
+                </div>
+                <div class="profile-list" id="returnsList"></div>
+            </section>
+
+            <section class="policy-card">
+                <h2>Como funciona</h2>
+                <ol>
+                    <li>Solicite a devolução pelo seu perfil.</li>
+                    <li>Informe o produto e o motivo.</li>
+                    <li>A loja analisa a solicitação.</li>
+                    <li>Após a aprovação, o reembolso é registrado.</li>
+                </ol>
+                <p class="muted">Este fluxo é uma simulação para o TCC e não processa pagamentos reais.</p>
+            </section>
+        </div>
+    </main>
+
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <h2>ALT WEAR</h2>
+            <p class="muted">Moda urbana, identidade e atitude.</p>
+        </div>
+
+        <div>
+            <b>Loja</b>
+            <p><a href="../paginas/produtos.html">Produtos</a></p>
+            <p><a href="../paginas/carrinho.html">Carrinho</a></p>
+            <p><a href="../paginas/perfil.html">Minha conta</a></p>
+        </div>
+
+        <div>
+            <b>Ajuda</b>
+            <p><a href="../paginas/localizacao.html">Localização</a></p>
+            <p><a href="../paginas/devolucoes.html">Trocas e devoluções</a></p>
+            <p><a href="../paginas/carrinho.html#pagamento">Pagamento seguro</a></p>
+        </div>
+
+        <div>
+            <b>Acessibilidade</b>
+            <p><button class="footer-link" type="button" data-access-open="true">Abrir recursos</button></p>
+        </div>
+    </div>
+</footer>
+
+<div class="access" id="accessibilityWidget">
+    <button class="access-main" type="button" id="accessBtn" aria-expanded="false" aria-controls="accessPanel">
+        ♿ <span>Acessibilidade</span>
+    </button>
+
+    <div class="access-panel" id="accessPanel" aria-hidden="true">
+        <div class="access-title">Recursos de acessibilidade</div>
+        <button type="button" data-access-action="read">🔊 Ler o texto</button>
+        <button type="button" data-access-action="links">🔗 Destacar links</button>
+        <button type="button" data-access-action="font">A+ Aumentar</button>
+        <button type="button" data-access-action="spacing">↔ Espaçamento</button>
+        <button type="button" data-access-action="contrast">◐ Alto contraste</button>
+        <button type="button" data-access-action="reset">↺ Restaurar</button>
+    </div>
+</div>
+
+    <script src="../js/produtos.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

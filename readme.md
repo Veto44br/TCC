@@ -1,4 +1,4 @@
-# Urban Wear — TCC
+# ALT WEAR — TCC
 
 Projeto feito somente com HTML, CSS e JavaScript.
 

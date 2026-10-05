@@ -1,14 +1,14 @@
 const PRODUTOS = [
     {
         "id": 1,
-        "slug": "bermuda_moletom_branca_estampada",
+        "slug": "calça_moletom_branca_estampada",
         "nome": "Calça Moletom Branca Estampada",
         "categoria": "Bermudas",
         "preco": 89.9,
         "precoAnterior": 112.38,
-        "descricao": "Bermuda Moletom Branca Estampada com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Calça cargo branca com detalhes gráficos, bolsos laterais e modelagem confortável.",
         "imagens": [
-            "bermuda_cargo_branca.jpg"
+            "calça_moletom_branca.jpg"
         ],
         "modelo": null,
         "cores": [
@@ -26,12 +26,12 @@ const PRODUTOS = [
     },
     {
         "id": 2,
-        "slug": "blusa_branca_manga_longa",
-        "nome": "Blusa Branca Manga Longa",
+        "slug": "blusa_branca_manga_longa_texturizada",
+        "nome": "Blusa Branca de Manga Longa Texturizada",
         "categoria": "Blusas",
         "preco": 109.9,
         "precoAnterior": 137.38,
-        "descricao": "Blusa Branca Manga Longa com estampa gráfica, tecido texturizado e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Blusa branca de manga longa com tecido texturizado e modelagem confortável.",
         "imagens": [
             "camisa_branca_manga_longa.jpg",
             "blusa_branca_manga_longa.jpg"
@@ -52,15 +52,15 @@ const PRODUTOS = [
     },
     {
         "id": 3,
-        "slug": "blusa_listrada_colorida",
-        "nome": "Blusa Listrada Colorida",
+        "slug": "blusa_listrada_cinza_branca",
+        "nome": "Blusa Listrada Cinza e Branca",
         "categoria": "Blusas",
         "preco": 129.9,
         "precoAnterior": 162.38,
-        "descricao": "Blusa Listrada Colorida com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Blusa de manga longa listrada em cinza e branco, com visual casual e urbano.",
         "imagens": [
-            
-            "blusa_listrada_cinza_branca_02.jpg","blusa_listrada_cinza_branca.jpg",
+            "blusa_listrada_cinza_branca_02.jpg",
+            "blusa_listrada_cinza_branca.jpg",
             "blusa_listrada_cinza_branca_detalhe.jpg"
         ],
         "modelo": null,
@@ -81,12 +81,12 @@ const PRODUTOS = [
     },
     {
         "id": 4,
-        "slug": "polo_listrada_animal_print",
-        "nome": "Polo Listrada Animal Print",
+        "slug": "polo_branca_animal_print",
+        "nome": "Polo Branca com Estampa Animal Print",
         "categoria": "Polos",
         "preco": 139.9,
         "precoAnterior": 174.88,
-        "descricao": "Polo Listrada Animal Print com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Polo branca com estampa animal print e gola tradicional, com visual urbano.",
         "imagens": [
             "polo_leopardo_branca.jpg",
             "polo_leopardo_branca_costas.jpg"
@@ -109,12 +109,12 @@ const PRODUTOS = [
     },
     {
         "id": 5,
-        "slug": "blusa_listrada_preta_e_cinza",
+        "slug": "blusa_listrada_preta_cinza",
         "nome": "Blusa Listrada Preta e Cinza",
         "categoria": "Blusas",
         "preco": 119.9,
         "precoAnterior": 149.88,
-        "descricao": "Blusa Listrada Preta e Cinza com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Blusa de manga longa com listras pretas e cinzas e modelagem confortável.",
         "imagens": [
             "blusa_listrada_preta_cinza.jpg",
             "blusa_listrada_preta_cinza_03.jpg",
@@ -142,7 +142,7 @@ const PRODUTOS = [
         "categoria": "Calças",
         "preco": 189.9,
         "precoAnterior": 237.38,
-        "descricao": "Calça baggy preta com estampa gráfica, modelagem ampla e estilo urbano, ideal para compor looks com personalidade.",
+        "descricao": "Calça preta de modelagem baggy e estampa gráfica, com caimento amplo.",
         "imagens": [
             "calca_preta_estampada.jpg",
             "calca_preta_baggy.jpg"
@@ -163,15 +163,14 @@ const PRODUTOS = [
     },
     {
         "id": 7,
-        "slug": "blusa_preta_estampada_gola_alta",
-        "nome": "Blusa Preta Estampada com Gola Alta",
+        "slug": "blusa_preta_manga_longa_estampada",
+        "nome": "Blusa Preta de Manga Longa Estampada",
         "categoria": "Blusas",
         "preco": 119.9,
         "precoAnterior": 149.88,
-        "descricao": "Blusa preta com gola alta e estampa gráfica, com visual urbano e modelagem confortável.",
+        "descricao": "Blusa preta de manga longa com estampa gráfica e modelagem confortável.",
         "imagens": [
-            "blusa_preta_estampada.jpg",
-            "moletom_preto_basico.jpg"
+            "blusa_preta_estampada.jpg"
         ],
         "modelo": null,
         "cores": [
@@ -194,7 +193,7 @@ const PRODUTOS = [
         "categoria": "Calças",
         "preco": 159.9,
         "precoAnterior": 199.88,
-        "descricao": "Calça Cargo Bege com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Calça cargo bege com bolsos utilitários e modelagem confortável.",
         "imagens": [
             "calca_cargo_bege.jpg",
             "calca_cargo_bege_detalhe.jpg"
@@ -215,12 +214,12 @@ const PRODUTOS = [
     },
     {
         "id": 9,
-        "slug": "calca_de_moletom_branca",
-        "nome": "Calça de Moletom Branca",
+        "slug": "calca_cargo_branca_estampada",
+        "nome": "Calça Cargo Branca Estampada",
         "categoria": "Calças",
         "preco": 169.9,
         "precoAnterior": 212.38,
-        "descricao": "Calça de Moletom Branca com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Calça cargo branca com detalhes gráficos e bolsos utilitários.",
         "imagens": [
             "calca_cargo_branca.jpg",
             "calca_cargo_branca_02.jpg",
@@ -243,12 +242,12 @@ const PRODUTOS = [
     },
     {
         "id": 10,
-        "slug": "calca_cargo_preta",
-        "nome": "Calça Moletom Preta",
+        "slug": "calca_cargo_preta_detalhe_lateral",
+        "nome": "Calça Cargo Preta com Detalhe Lateral",
         "categoria": "Calças",
         "preco": 179.9,
         "precoAnterior": 224.88,
-        "descricao": "Calça Moletom Preta com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Calça cargo preta com bolsos utilitários e detalhe lateral.",
         "imagens": [
             "calca_cargo_preta.jpg",
             "calca_cargo_preta_detalhe.jpg"
@@ -270,11 +269,11 @@ const PRODUTOS = [
     {
         "id": 11,
         "slug": "calca_jeans_azul_clara",
-        "nome": "Calça Jeans Azul Clara",
+        "nome": "Calça Jeans Azul-Clara",
         "categoria": "Calças",
         "preco": 199.9,
         "precoAnterior": 249.88,
-        "descricao": "Calça Jeans Azul Clara com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Calça jeans azul-clara de modelagem casual e lavagem clara.",
         "imagens": [
             "calca_jeans_azul_clara.jpg",
             "calca_jeans_azul_clara_detalhe.jpg",
@@ -296,12 +295,12 @@ const PRODUTOS = [
     },
     {
         "id": 12,
-        "slug": "calca_jeans_baggy_cinza",
-        "nome": "Calça Jeans Baggy Cinza",
+        "slug": "calca_jeans_baggy_azul",
+        "nome": "Calça Jeans Baggy Azul",
         "categoria": "Calças",
         "preco": 199.9,
         "precoAnterior": 249.88,
-        "descricao": "Calça jeans baggy de modelagem ampla, com lavagem azul acinzentada e caimento urbano.",
+        "descricao": "Calça jeans baggy azul com modelagem ampla e caimento urbano.",
         "imagens": [
             "calca_jeans_baggy_azul.jpg",
             "calca_jeans_baggy_azul_costas.jpg",
@@ -326,12 +325,12 @@ const PRODUTOS = [
     },
     {
         "id": 13,
-        "slug": "blusa_feminina_preta",
-        "nome": "Blusa Feminina Preta",
+        "slug": "blusa_preta_ombro_a_ombro",
+        "nome": "Blusa Preta Ombro a Ombro",
         "categoria": "Blusas",
         "preco": 99.9,
         "precoAnterior": 124.88,
-        "descricao": "Blusa preta de manga longa com decote ombro a ombro, modelagem justa e visual versátil para compor looks urbanos.",
+        "descricao": "Blusa preta de manga longa com decote ombro a ombro e modelagem ajustada.",
         "imagens": [
             "blusa_feminina_preta.jpg",
             "blusa_feminina_preta_costas.jpg",
@@ -354,15 +353,14 @@ const PRODUTOS = [
     {
         "id": 15,
         "slug": "camiseta_branca_animal_print",
-        "nome": "Camisa Branca Animal Print",
+        "nome": "Camiseta Branca com Estampa Animal Print",
         "categoria": "Camisetas",
         "preco": 99.9,
         "precoAnterior": 124.88,
-        "descricao": "Camiseta Branca Animal Print com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Camiseta branca de manga curta com estampa gráfica em animal print.",
         "imagens": [
             "camiseta_branca_leopardo.jpg",
-            "camiseta_branca_leopardo_02.jpg",
-            "moletom_branco_basico.jpg"
+            "camiseta_branca_leopardo_02.jpg"
         ],
         "modelo": null,
         "cores": [
@@ -381,14 +379,13 @@ const PRODUTOS = [
     {
         "id": 16,
         "slug": "camiseta_branca_estampa_floral",
-        "nome": "Camiseta Branca Estampa Floral",
+        "nome": "Camiseta Branca com Estampa Floral",
         "categoria": "Camisetas",
         "preco": 89.9,
         "precoAnterior": 112.38,
-        "descricao": "Camiseta Branca Estampa Floral com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Camiseta branca de manga curta com estampa floral gráfica.",
         "imagens": [
-            "camiseta_branca_estampa_vermelha.jpg",
-            "camiseta_branca_textura.jpg"
+            "camiseta_branca_estampa_vermelha.jpg"
         ],
         "modelo": null,
         "cores": [
@@ -406,12 +403,12 @@ const PRODUTOS = [
     },
     {
         "id": 19,
-        "slug": "polo_cinza_grafica",
-        "nome": "Polo Cinza Gráfica",
+        "slug": "polo_cinza_estampa_grafica",
+        "nome": "Polo Cinza com Estampa Gráfica",
         "categoria": "Polos",
         "preco": 129.9,
         "precoAnterior": 162.38,
-        "descricao": "Polo Cinza Gráfica com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Polo cinza com gola tradicional e estampa gráfica.",
         "imagens": [
             "polo_cinza_grafica.jpg",
             "polo_cinza_grafica_costas.jpg",
@@ -433,12 +430,12 @@ const PRODUTOS = [
     },
     {
         "id": 21,
-        "slug": "polo_preta_caveira",
-        "nome": "Polo Preta Caveira",
+        "slug": "polo_preta_estampa_caveira",
+        "nome": "Polo Preta com Estampa de Caveira",
         "categoria": "Polos",
         "preco": 99.9,
         "precoAnterior": 124.88,
-        "descricao": "Polo preta com estampa gráfica de caveira, modelagem confortável e visual urbano.",
+        "descricao": "Polo preta de manga curta com estampa gráfica de caveira.",
         "imagens": [
             "camiseta_preta_estampada.jpg",
             "camiseta_preta_basica.jpg"
@@ -459,12 +456,12 @@ const PRODUTOS = [
     },
     {
         "id": 22,
-        "slug": "polo_preta_grafica",
-        "nome": "Polo Preta Gráfica",
+        "slug": "polo_preta_estampa_grafica",
+        "nome": "Polo Preta com Estampa Gráfica",
         "categoria": "Polos",
         "preco": 139.9,
         "precoAnterior": 174.88,
-        "descricao": "Polo Preta Gráfica com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Polo preta de manga curta com estampa gráfica e visual urbano.",
         "imagens": [
             "camiseta_preta_estampada_02.jpg",
             "polo_preta_grafica_modelo.jpg",
@@ -486,12 +483,12 @@ const PRODUTOS = [
     },
     {
         "id": 23,
-        "slug": "camiseta_preta_i_wish",
-        "nome": "Camiseta Preta I Wish",
+        "slug": "camiseta_preta_i_wish_i_was_real",
+        "nome": "Camiseta Preta \"I Wish I Was Real\"",
         "categoria": "Camisetas",
         "preco": 79.9,
         "precoAnterior": 99.88,
-        "descricao": "Camiseta Preta I Wish com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Camiseta preta de manga curta com a estampa \"I wish I was real\".",
         "imagens": [
             "camiseta_preta_i_wish.jpg"
         ],
@@ -512,11 +509,11 @@ const PRODUTOS = [
     {
         "id": 24,
         "slug": "polo_rosa_animal_print",
-        "nome": "Polo Rosa Animal Print",
+        "nome": "Polo Rosa com Estampa Animal Print",
         "categoria": "Polos",
         "preco": 139.9,
         "precoAnterior": 174.88,
-        "descricao": "Polo Rosa Animal Print com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Polo rosa com estampa animal print, gola contrastante e visual urbano.",
         "imagens": [
             "polo_rosa_leopardo_02.jpg",
             "polo_rosa_leopardo_01.jpg",
@@ -539,19 +536,19 @@ const PRODUTOS = [
     },
     {
         "id": 26,
-        "slug": "moletom_branco_estampado",
-        "nome": "Moletom Branco Estampado",
+        "slug": "moletom_branco_basico",
+        "nome": "Moletom Branco Básico",
         "categoria": "Moletons",
         "preco": 169.9,
         "precoAnterior": 187.38,
-        "descricao": "Moletom Branco Estampado com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Moletom branco básico de manga longa, com capuz e modelagem confortável.",
         "imagens": [
-            "cinto_corrente_prateado.jpg",
+            "moletom_branco_basico.jpg",
             "moletom_branco_costas.jpg"
         ],
         "modelo": null,
         "cores": [
-            "Prata"
+            "Branco"
         ],
         "tamanhos": [
             "P",
@@ -565,12 +562,12 @@ const PRODUTOS = [
     },
     {
         "id": 27,
-        "slug": "cinto_vermelho_estampado",
-        "nome": "Cinto Vermelho Estampado",
+        "slug": "cinto_vermelho_estampa_grafica",
+        "nome": "Cinto Vermelho com Estampa Gráfica",
         "categoria": "Acessórios",
         "preco": 69.9,
         "precoAnterior": 87.38,
-        "descricao": "Cinto Vermelho Estampado com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Cinto vermelho com estampa gráfica e visual urbano.",
         "imagens": [
             "cinto_vermelho.jpg",
             "cinto_vermelho_costas.jpg"
@@ -597,7 +594,7 @@ const PRODUTOS = [
         "categoria": "Conjuntos",
         "preco": 249.9,
         "precoAnterior": 312.38,
-        "descricao": "Conjunto Puffer Verde com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Conjunto verde com peças de visual puffer e proposta urbana.",
         "imagens": [
             "conjunto_puffer_verde_modelo.jpg",
             "conjunto_puffer_verde_costas.jpg",
@@ -619,12 +616,12 @@ const PRODUTOS = [
     },
     {
         "id": 29,
-        "slug": "jaqueta_corta-vento_preta",
-        "nome": "Jaqueta Corta-Vento Preta",
-        "categoria": "Casacos",
+        "slug": "jaqueta_corta_vento_preta_com_capuz",
+        "nome": "Jaqueta Corta-Vento Preta com Capuz",
+        "categoria": "Jaquetas",
         "preco": 219.9,
         "precoAnterior": 274.88,
-        "descricao": "Jaqueta Corta-Vento Preta com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Jaqueta corta-vento preta com capuz, fechamento frontal e modelagem leve.",
         "imagens": [
             "jaqueta_corta_vento_preta_modelo.jpg",
             "jaqueta_corta_vento_preta_modelo_costas.jpg"
@@ -645,15 +642,14 @@ const PRODUTOS = [
     },
     {
         "id": 30,
-        "slug": "jaqueta_preta_listrada",
-        "nome": "Jaqueta Preta Listrada",
-        "categoria": "Casacos",
+        "slug": "jaqueta_preta_com_capuz",
+        "nome": "Jaqueta Preta com Capuz",
+        "categoria": "Jaquetas",
         "preco": 229.9,
         "precoAnterior": 287.38,
-        "descricao": "Jaqueta Preta Listrada com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Jaqueta preta com capuz e visual esportivo urbano.",
         "imagens": [
-            "jaqueta_preta_capuz.jpg",
-            "jaqueta_listrada_preta_costas.jpg"
+            "jaqueta_preta_capuz.jpg"
         ],
         "modelo": null,
         "cores": [
@@ -671,12 +667,12 @@ const PRODUTOS = [
     },
     {
         "id": 31,
-        "slug": "jaqueta_preta_grafica",
-        "nome": "Jaqueta Preta Gráfica",
-        "categoria": "Casacos",
+        "slug": "jaqueta_preta_mangas_graficas",
+        "nome": "Jaqueta Preta com Mangas Gráficas",
+        "categoria": "Jaquetas",
         "preco": 219.9,
         "precoAnterior": 274.88,
-        "descricao": "Jaqueta Preta Gráfica com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Jaqueta preta com detalhes gráficos nas mangas e modelagem urbana.",
         "imagens": [
             "jaqueta_preta_mangas_graficas.jpg",
             "jaqueta_preta_costas.jpg"
@@ -699,10 +695,10 @@ const PRODUTOS = [
         "id": 32,
         "slug": "jaqueta_puffer_preta_com_capuz",
         "nome": "Jaqueta Puffer Preta com Capuz",
-        "categoria": "Casacos",
+        "categoria": "Jaquetas",
         "preco": 299.9,
         "precoAnterior": 374.88,
-        "descricao": "Jaqueta Puffer Preta com Capuz com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Jaqueta puffer preta com capuz e volume acolchoado.",
         "imagens": [
             "jaqueta_puffer_preta_capuz.jpg",
             "jaqueta_puffer_preta_costas.jpg"
@@ -723,12 +719,12 @@ const PRODUTOS = [
     },
     {
         "id": 35,
-        "slug": "polo_preto_losangeles",
-        "nome": "Polo Preto Losangeles",
-        "categoria": "Moletons",
+        "slug": "polo_preta_los_angeles",
+        "nome": "Polo Preta Los Angeles",
+        "categoria": "Polos",
         "preco": 179.9,
         "precoAnterior": 224.88,
-        "descricao": "Polo Preto estampa Los Angeles com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Polo preta de manga curta com estampa Los Angeles.",
         "imagens": [
             "polo_preto_losangeles.jpg"
         ],
@@ -753,7 +749,7 @@ const PRODUTOS = [
         "categoria": "Moletons",
         "preco": 169.9,
         "precoAnterior": 212.38,
-        "descricao": "Moletom Vermelho com Capuz com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Moletom vermelho com capuz e modelagem confortável.",
         "imagens": [
             "moletom_vermelho_capuz.jpg",
             "moletom_vermelho_costas.jpg"
@@ -774,12 +770,12 @@ const PRODUTOS = [
     },
     {
         "id": 37,
-        "slug": "polo_listrada_azul_e_branca",
+        "slug": "polo_listrada_azul_branca",
         "nome": "Polo Listrada Azul e Branca",
         "categoria": "Polos",
         "preco": 129.9,
         "precoAnterior": 162.38,
-        "descricao": "Polo Listrada Azul e Branca com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Polo listrada em azul, branco e vermelho, com gola tradicional.",
         "imagens": [
             "polo_listrada_azul_branca_costas.jpg",
             "polo_listrada_azul_branca.jpg"
@@ -787,7 +783,8 @@ const PRODUTOS = [
         "modelo": null,
         "cores": [
             "Azul",
-            "Branco"
+            "Branco",
+            "Vermelho"
         ],
         "tamanhos": [
             "P",
@@ -806,7 +803,7 @@ const PRODUTOS = [
         "categoria": "Polos",
         "preco": 119.9,
         "precoAnterior": 149.88,
-        "descricao": "Polo Rosa Listrada com estilo urbano e caimento confortável, ideal para compor looks do dia a dia.",
+        "descricao": "Polo rosa listrada de manga curta com gola tradicional.",
         "imagens": [
             "polo_rosa_listrada.jpg",
             "polo_rosa_listrada_costas.jpg"
@@ -827,21 +824,20 @@ const PRODUTOS = [
     },
     {
         "id": 39,
-        "slug": "jaqueta_animal_print_bege",
-        "nome": "Jaqueta Animal Print Bege",
-        "categoria": "Casacos",
+        "slug": "sueter_texturizado_cinza",
+        "nome": "Suéter Texturizado Cinza",
+        "categoria": "Suéteres",
         "preco": 219.9,
         "precoAnterior": 274.88,
-        "descricao": "Jaqueta com estampa animal print, faixas laterais contrastantes e punhos em courino, estilo urbano e confortável.",
+        "descricao": "Suéter cinza de malha texturizada e modelagem confortável.",
         "imagens": [
-            "sueter_cinza_texturizado_detalhe.jpg",
+            "sueter_cinza_texturizado.jpg",
             "sueter_cinza_texturizado_costas.jpg",
-            "sueter_cinza_texturizado.jpg"
+            "sueter_cinza_texturizado_detalhe.jpg"
         ],
         "modelo": null,
         "cores": [
-            "Bege",
-            "Marrom"
+            "Cinza"
         ],
         "tamanhos": [
             "P",
@@ -855,21 +851,19 @@ const PRODUTOS = [
     },
     {
         "id": 40,
-        "slug": "camiseta_cinza_23_boston",
-        "nome": "Camiseta Cinza Boston 23",
+        "slug": "camiseta_cinza_boston_23",
+        "nome": "Camiseta Cinza \"Boston 23\"",
         "categoria": "Camisetas",
         "preco": 109.9,
         "precoAnterior": 137.38,
-        "descricao": "Camiseta esportiva cinza com estampa animal print e número 23, inspirada em uniformes urbanos.",
+        "descricao": "Camiseta cinza de manga curta com estampa esportiva \"Boston 23\".",
         "imagens": [
             "camiseta_cinza_23.jpg",
             "camiseta_cinza_23_modelo.jpg"
         ],
         "modelo": null,
         "cores": [
-            "Cinza",
-            "Preto",
-            "Branco"
+            "Cinza"
         ],
         "tamanhos": [
             "P",

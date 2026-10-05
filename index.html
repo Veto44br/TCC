@@ -1,212 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Urban Wear
-  </title>
-  <link href="css/style.css" rel="stylesheet"/>
-  <meta content="Loja virtual Urban Wear" name="description"/>
- </head>
- <body>
-  <header class="header">
-   <div class="container header-inner">
-    <a class="logo" href="index.html">
-     URBAN WEAR
-    </a>
-    <nav class="nav" id="nav">
-     <a href="index.html">
-      Início
-     </a>
-     <a href="paginas/produtos.html">
-      Loja
-     </a>
-     <a href="paginas/produtos.html?categoria=Polos">
-      Polos
-     </a>
-     <a href="paginas/produtos.html?categoria=Moletons">
-      Moletons
-     </a>
-     <a href="paginas/produtos.html?categoria=Calças">
-      Calças
-     </a>
-     <a href="paginas/produtos.html?categoria=Jorts">
-      Jorts
-     </a>
-    </nav>
-    <div class="header-actions">
-     <a aria-label="Minha conta" class="icon-btn" href="paginas/login.html">
-      👤
-     </a>
-     <a aria-label="Carrinho" class="icon-btn" href="paginas/carrinho.html">
-      🛒
-      <span class="badge" id="cartCount">
-       0
-      </span>
-     </a>
-     <button aria-label="Abrir menu" class="icon-btn mobile-menu" id="menuBtn">
-      ☰
-     </button>
-    </div>
-   </div>
-  </header>
-  <main>
-   <section class="hero">
-    <div class="container hero-content">
-     <p class="eyebrow">
-      NOVA COLEÇÃO
-     </p>
-     <h1>
-      SEU ESTILO.
-      <br/>
-      SUA IDENTIDADE.
-     </h1>
-     <p>
-      Peças urbanas para montar looks com personalidade.
-     </p>
-     <a class="btn btn-light" href="paginas/produtos.html">
-      COMPRAR AGORA
-     </a>
-    </div>
-   </section>
-   <section class="section">
-    <div class="container">
-     <div class="section-head">
-      <div>
-       <p class="eyebrow">
-        EXPLORE
-       </p>
-       <h2>
-        Categorias
-       </h2>
-      </div>
-     </div>
-     <div class="categories">
-      <a class="cat" href="paginas/produtos.html?categoria=Camisetas">
-       <span>
-        Camisetas
-       </span>
-      </a>
-      <a class="cat" href="paginas/produtos.html?categoria=Moletons">
-       <span>
-        Moletons
-       </span>
-      </a>
-      <a class="cat" href="paginas/produtos.html?categoria=Calças">
-       <span>
-        Calças
-       </span>
-      </a>
-      <a class="cat" href="paginas/produtos.html?categoria=Jorts">
-       <span>
-        Jorts & Shorts
-       </span>
-      </a>
-     </div>
-    </div>
-   </section>
-   <section class="section">
-    <div class="container">
-     <div class="section-head">
-      <div>
-       <p class="eyebrow">
-        CONFIRA
-       </p>
-       <h2>
-        Mais procurados
-       </h2>
-      </div>
-      <a href="paginas/produtos.html">
-       Ver todos →
-      </a>
-     </div>
-     <div class="products-grid" id="featured">
-     </div>
-    </div>
-   </section>
-  </main>
-  <footer class="footer">
-   <div class="container footer-grid">
-    <div>
-     <h2>
-      URBAN WEAR
-     </h2>
-     <p class="muted">
-      Moda urbana, identidade e atitude.
-     </p>
-    </div>
-    <div>
-     <b>
-      Loja
-     </b>
-     <p>
-      <a href="paginas/produtos.html">
-       Produtos
-      </a>
-     </p>
-     <p>
-      <a href="paginas/carrinho.html">
-       Carrinho
-      </a>
-     </p>
-     <p>
-      <a href="paginas/login.html">
-       Minha conta
-      </a>
-     </p>
-    </div>
-    <div>
-     <b>
-      Ajuda
-     </b>
-     <p>
-      <a href="paginas/localizacao.html">
-       Localização
-      </a>
-     </p>
-     <p>
-      Trocas e devoluções
-     </p>
-     <p>
-      Pagamento seguro
-     </p>
-    </div>
-    <div>
-     <b>
-      Acessibilidade
-     </b>
-     <p>
-      Fonte ampliada
-     </p>
-     <p>
-      Alto contraste
-     </p>
-    </div>
-   </div>
-  </footer>
-  <div class="access">
-   <div class="access-panel" id="accessPanel">
-    <b>
-     Acessibilidade
-    </b>
-    <button onclick="changeFont(1)">
-     Aumentar fonte
-    </button>
-    <button onclick="changeFont(-1)">
-     Diminuir fonte
-    </button>
-    <button onclick="toggleContrast()">
-     Alto contraste
-    </button>
-   </div>
-   <button aria-label="Acessibilidade" id="accessBtn">
-    ♿
-   </button>
-  </div>
-  <script src="js/produtos.js">
-  </script>
-  <script src="js/app.js">
-  </script>
- </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALT WEAR — Moda urbana</title>
+    <meta name="description" content="ALT WEAR — moda urbana, streetwear e peças com atitude.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+    <header class="home-header">
+        <div class="home-header-top container">
+            <a class="home-logo" href="index.html" aria-label="ALT WEAR — início">ALT WEAR</a>
+
+            <form class="home-search" id="homeSearch" action="paginas/produtos.html" method="get">
+                <input id="homeSearchInput" name="busca" type="search" placeholder="Busque por roupas, categorias ou marcas..." aria-label="Buscar produtos">
+                <button type="submit" aria-label="Pesquisar">⌕</button>
+            </form>
+
+            <div class="home-actions">
+                <a href="paginas/perfil.html" aria-label="Minha conta" class="home-icon">♙</a>
+                <a href="paginas/carrinho.html" aria-label="Carrinho" class="home-icon home-cart">🛒 <span id="cartCount" class="badge">0</span></a>
+            </div>
+        </div>
+
+        <div class="home-nav-wrap">
+            <nav class="home-nav container" aria-label="Navegação principal">
+                <a class="active" href="index.html">Início</a>
+                <a href="paginas/produtos.html">Produtos</a>
+                <a href="paginas/produtos.html">Categorias <span>⌄</span></a>
+                <a href="paginas/perfil.html">Minha conta</a>
+                <div class="home-access-nav" id="accessibilityWidget">
+                    <button class="home-access-nav-btn" type="button" id="accessBtn" aria-expanded="false" aria-controls="accessPanel">♿ <span>Acessibilidade</span></button>
+                    <div class="access-panel home-access-nav-panel" id="accessPanel" aria-hidden="true">
+                        <div class="access-title">Recursos de acessibilidade</div>
+                        <button type="button" data-access-action="read">🔊 Ler o texto</button>
+                        <button type="button" data-access-action="links">🔗 Destacar links</button>
+                        <button type="button" data-access-action="font">A+ Aumentar</button>
+                        <button type="button" data-access-action="spacing">↔ Espaçamento</button>
+                        <button type="button" data-access-action="contrast">◐ Alto contraste</button>
+                        <button type="button" data-access-action="reset">↺ Restaurar</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="home-hero" aria-label="Campanha ALT WEAR">
+            <img src="img/altwear_banner.png" alt="ALT WEAR — Estilo, atitude, sem limites">
+        </section>
+
+        <section class="home-categories">
+            <div class="container">
+                <div class="home-section-head">
+                    <div>
+                        <p class="home-kicker">EXPLORE POR CATEGORIA</p>
+                        <h1>Nossas Categorias</h1>
+                    </div>
+                    <a href="paginas/produtos.html">Ver todas <span>→</span></a>
+                </div>
+
+                <div class="home-category-grid">
+                    <a class="home-category" href="paginas/produtos.html?categoria=Camisetas">
+                        <img src="img/camiseta_branca_estampa_vermelha.jpg" alt="Camisetas">
+                        <strong>Camisetas</strong><span>→</span>
+                    </a>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Polos">
+                        <img src="img/polo_cinza_grafica.jpg" alt="Polos">
+                        <strong>Polos</strong><span>→</span>
+                    </a>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Moletons">
+                        <img src="img/moletom_branco_basico.jpg" alt="Moletons">
+                        <strong>Moletons</strong><span>→</span>
+                    </a>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Calças">
+                        <img src="img/calca_jeans_baggy_azul.jpg" alt="Calças">
+                        <strong>Calças</strong><span>→</span>
+                    </a>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Bermudas">
+                        <img src="img/bermuda_cargo_branca.jpg" alt="Bermudas">
+                        <strong>Bermudas</strong><span>→</span>
+                    </a>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Jaquetas">
+                        <img src="img/jaqueta_corta_vento_preta_modelo.jpg" alt="Jaquetas">
+                        <strong>Jaquetas</strong><span>→</span>
+                    </a>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Blusas">
+                        <img src="img/blusa_listrada_cinza_branca.jpg" alt="Blusas">
+                        <strong>Blusas</strong><span>→</span>
+                    </a>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Suéteres">
+                        <img src="img/sueter_cinza_texturizado.jpg" alt="Suéteres">
+                        <strong>Suéteres</strong><span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-bestsellers">
+            <div class="container">
+                <div class="home-section-head dark">
+                    <div>
+                        <h2>Mais vendidos</h2>
+                    </div>
+                    <a href="paginas/produtos.html">Ver todos <span>→</span></a>
+                </div>
+
+                <div class="home-products-shell">
+                    <button class="home-carousel-arrow prev" id="carouselPrev" type="button" aria-label="Produtos anteriores">‹</button>
+                    <div class="home-products-viewport">
+                        <div class="home-products-track" id="featured"></div>
+                    </div>
+                    <button class="home-carousel-arrow next" id="carouselNext" type="button" aria-label="Próximos produtos">›</button>
+                </div>
+                <div id="carouselDots" class="carousel-dots home-dots" aria-label="Selecionar página"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="home-footer">
+        <div class="home-service-strip">
+            <div class="container home-service-grid">
+                <div class="service-item"><span class="service-icon">🚚</span><div><strong>Frete grátis</strong><small>Em compras acima de R$ 199,90</small></div></div>
+                <div class="service-item"><span class="service-icon">♢</span><div><strong>Compra segura</strong><small>Seus dados protegidos</small></div></div>
+                <div class="service-item"><span class="service-icon">▣</span><div><strong>Diversas formas de pagamento</strong><small>Cartão, Pix e mais</small></div></div>
+                <div class="service-item location-service"><span class="service-icon">⌖</span><div><strong>Nossa localização</strong><small>Av. Paulista, 1578 — Bela Vista, São Paulo - SP</small><a href="paginas/localizacao.html">Ver no mapa →</a></div></div>
+            </div>
+        </div>
+        <div class="home-footer-links">
+            <div class="container home-footer-grid">
+                <div><h3>ALT WEAR</h3><p>Moda urbana, identidade e atitude.</p></div>
+                <div><strong>Loja</strong><a href="paginas/produtos.html">Produtos</a><a href="paginas/carrinho.html">Carrinho</a><a href="paginas/perfil.html">Minha conta</a></div>
+                <div><strong>Ajuda</strong><a href="paginas/localizacao.html">Localização</a><a href="paginas/devolucoes.html">Trocas e devoluções</a><a href="paginas/carrinho.html#pagamento">Pagamento seguro</a></div>
+                <div><strong>Acessibilidade</strong><button type="button" class="footer-link" data-access-open="true">Abrir recursos</button></div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/produtos.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/app.js"></script>
+</body>
 </html>
