@@ -1,14 +1,14 @@
 const PRODUTOS = [
     {
         "id": 1,
-        "slug": "calça_moletom_branca_estampada",
-        "nome": "Calça Moletom Branca Estampada",
+        "slug": "bermuda_cargo_branca_estampada",
+        "nome": "Bermuda Cargo Branca Estampada",
         "categoria": "Bermudas",
         "preco": 89.9,
         "precoAnterior": 112.38,
-        "descricao": "Calça cargo branca com detalhes gráficos, bolsos laterais e modelagem confortável.",
+        "descricao": "Bermuda cargo branca com detalhes gráficos, bolsos laterais e modelagem confortável.",
         "imagens": [
-            "calça_moletom_branca.jpg"
+            "bermuda_cargo_branca.jpg"
         ],
         "modelo": null,
         "cores": [

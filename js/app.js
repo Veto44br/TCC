@@ -920,11 +920,18 @@ function initPaymentOptions() {
     updatePayment();
 }
 
-function finishPurchase() {
+async function finishPurchase() {
     const payment = document.querySelector('input[name="pay"]:checked');
 
     if (!payment) {
         alert("Selecione uma forma de pagamento.");
+        return;
+    }
+
+    const currentUser = await (typeof supabaseGetUser === "function" ? supabaseGetUser() : null);
+    if (!currentUser) {
+        alert("Entre na sua conta antes de finalizar a compra.");
+        window.location.href = sitePath("paginas/login.html");
         return;
     }
 
@@ -935,21 +942,23 @@ function finishPurchase() {
     };
 
     const cart = getCart();
+    if (!cart.length) {
+        alert("Seu carrinho está vazio.");
+        return;
+    }
+
     const subtotal = cart.reduce((total, item) => {
         const product = getProductById(item.id);
         return total + (product ? product.preco * item.q : 0);
     }, 0);
     const shipping = subtotal >= 199 ? 0 : 19.9;
-    const orders = getJson(ORDERS_KEY, []);
 
-    const currentUser = getUser();
     const order = {
-        id: `AW-${new Date().getFullYear()}-${String(Date.now()).slice(-6)}`,
-        email: currentUser?.email || "visitante@altwear.local",
-        date: new Date().toLocaleDateString("pt-BR"),
+        email: currentUser.email,
         status: "A caminho",
         delivery: "Previsão: em até 7 dias úteis",
         total: subtotal + shipping,
+        paymentMethod: paymentNames[payment.value],
         items: cart.map((item) => ({
             productId: item.id,
             q: item.q,
@@ -958,16 +967,23 @@ function finishPurchase() {
         }))
     };
 
-    orders.unshift(order);
-    saveJson(ORDERS_KEY, orders);
-    if (typeof saveOrderToDatabase === "function") {
-        saveOrderToDatabase(order);
+    try {
+        await saveOrderToDatabase(order);
+    } catch (error) {
+        console.error(error);
+        alert("Não foi possível salvar o pedido no banco de dados. Verifique a configuração do Supabase.");
+        return;
     }
+
+    // Mantém uma cópia local apenas para a interface/carrinho offline.
+    const localOrders = getJson(ORDERS_KEY, []);
+    localOrders.unshift({ ...order, id: `AW-${Date.now()}`, date: new Date().toLocaleDateString("pt-BR") });
+    saveJson(ORDERS_KEY, localOrders);
 
     alert(
         `${paymentNames[payment.value]} selecionado.\n\n` +
         "Compra finalizada com sucesso!\n" +
-        "Seu pedido foi salvo em Minha conta.\n" +
+        "Seu pedido foi salvo no banco de dados do ALT WEAR.\n" +
         "Esta é uma simulação acadêmica: nenhum pagamento real foi realizado."
     );
 
@@ -985,20 +1001,20 @@ function initAuth() {
 
             const email = $("#email").value.trim().toLowerCase();
             const senha = $("#senha").value;
-            const stored = typeof findUserInDatabase === "function" ? await findUserInDatabase(email) : null;
 
-            if (stored && stored.passwordHash && stored.passwordHash !== await hashPassword(senha)) {
-                alert("E-mail ou senha incorretos.");
-                return;
+            try {
+                const data = await supabaseSignIn(email, senha);
+                const profile = await supabaseGetProfile();
+                localStorage.setItem(USER_KEY, JSON.stringify({
+                    id: data.user.id,
+                    nome: profile?.nome || data.user.user_metadata?.nome || email.split("@")[0],
+                    email: data.user.email
+                }));
+                window.location.href = sitePath("index.html");
+            } catch (error) {
+                console.error(error);
+                alert(`Não foi possível entrar: ${error.message}`);
             }
-
-            const user = {
-                nome: stored?.nome || email.split("@")[0],
-                email
-            };
-
-            localStorage.setItem(USER_KEY, JSON.stringify(user));
-            window.location.href = sitePath("index.html");
         });
     }
 
@@ -1011,27 +1027,30 @@ function initAuth() {
                 return;
             }
 
+            const nome = $("#nome").value.trim();
             const email = $("#email").value.trim().toLowerCase();
-            const passwordHash = await hashPassword($("#senha").value);
-            const user = {
-                nome: $("#nome").value.trim(),
-                email,
-                passwordHash,
-                createdAt: new Date().toISOString()
-            };
+            const senha = $("#senha").value;
 
-            if (typeof findUserInDatabase === "function" && await findUserInDatabase(email)) {
-                alert("Este e-mail já está cadastrado.");
-                return;
+            try {
+                const data = await supabaseSignUp({ nome, email, password: senha });
+                localStorage.setItem(USER_KEY, JSON.stringify({
+                    id: data.user?.id || null,
+                    nome,
+                    email
+                }));
+
+                if (!data.session) {
+                    alert("Conta criada! O Supabase solicitou confirmação do e-mail. Confirme seu e-mail e depois faça login.");
+                    window.location.href = sitePath("paginas/login.html");
+                    return;
+                }
+
+                alert("Conta criada com sucesso!");
+                window.location.href = sitePath("index.html");
+            } catch (error) {
+                console.error(error);
+                alert(`Não foi possível criar a conta: ${error.message}`);
             }
-
-            if (typeof saveUserToDatabase === "function") {
-                await saveUserToDatabase(user);
-            }
-
-            localStorage.setItem(USER_KEY, JSON.stringify({ nome: user.nome, email: user.email }));
-            alert("Conta criada com sucesso!");
-            window.location.href = sitePath("index.html");
         });
     }
 }
@@ -1121,17 +1140,16 @@ function ensureDemoProfileData() {
     }
 }
 
-function initProfile() {
+async function initProfile() {
     const profileTitle = $("#profileTitle");
     const ordersList = $("#ordersList");
 
-    if (!profileTitle || !ordersList) {
-        return;
-    }
+    if (!profileTitle || !ordersList) return;
 
-    const user = getUser();
+    const authUser = await (typeof supabaseGetUser === "function" ? supabaseGetUser() : null);
 
-    if (!user) {
+    if (!authUser) {
+        localStorage.removeItem(USER_KEY);
         profileTitle.textContent = "Entre na sua conta";
         $("#profileEmail").textContent = "Acesse pedidos, entregas, avaliações e devoluções.";
         ordersList.innerHTML = `
@@ -1140,8 +1158,7 @@ function initProfile() {
                 <p class="muted">Entre ou crie sua conta para acessar seu perfil.</p>
                 <a class="btn" href="login.html">Entrar</a>
                 <a class="btn btn-outline" href="cadastro.html">Criar conta</a>
-            </div>
-        `;
+            </div>`;
         $("#shippingList").innerHTML = "";
         $("#reviewsList").innerHTML = "";
         $("#returnsPreview").innerHTML = "";
@@ -1149,23 +1166,37 @@ function initProfile() {
         return;
     }
 
-    ensureDemoProfileData();
+    const profile = await supabaseGetProfile();
+    const user = {
+        id: authUser.id,
+        nome: profile?.nome || authUser.user_metadata?.nome || authUser.email?.split("@")[0],
+        email: authUser.email
+    };
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
 
     profileTitle.textContent = user.nome ? `Olá, ${user.nome.split(" ")[0]}!` : "Meu perfil";
     $("#profileEmail").textContent = user.email || "";
 
-    $("#logoutButton").addEventListener("click", () => {
+    $("#logoutButton").addEventListener("click", async () => {
+        await supabaseSignOut();
         localStorage.removeItem(USER_KEY);
         window.location.href = "../index.html";
     });
 
-    renderProfileData();
+    try {
+        const [orders, reviews, returns] = await Promise.all([
+            getOrdersFromDatabase(),
+            getReviewsFromDatabase(),
+            getReturnsFromDatabase()
+        ]);
+        renderProfileData(orders, reviews, returns);
+    } catch (error) {
+        console.error(error);
+        ordersList.innerHTML = `<div class="empty-state"><h3>Não foi possível carregar seus dados.</h3><p class="muted">Verifique as tabelas e as políticas RLS do Supabase.</p></div>`;
+    }
 }
 
-function renderProfileData() {
-    const orders = getJson(ORDERS_KEY, []);
-    const reviews = getJson(REVIEWS_KEY, []);
-    const returns = getJson(RETURNS_KEY, []);
+function renderProfileData(orders = [], reviews = [], returns = []) {
     const shipping = orders.filter((order) => order.status === "A caminho");
 
     $("#profileStats").innerHTML = `
@@ -1283,32 +1314,30 @@ function renderReturnsPreview(returns) {
     `).join("");
 }
 
-function initReturns() {
+async function initReturns() {
     const list = $("#returnsList");
+    if (!list) return;
 
-    if (!list) {
-        return;
-    }
-
-    const user = getUser();
+    const user = await supabaseGetUser();
     if (!user) {
         list.innerHTML = `<div class="empty-state"><h3>Entre na sua conta para ver suas solicitações.</h3><a class="btn" href="login.html">Entrar</a></div>`;
         return;
     }
 
-    ensureDemoProfileData();
-    renderReturnsPage();
+    try {
+        const returns = await getReturnsFromDatabase();
+        renderReturnsPage(returns);
+    } catch (error) {
+        console.error(error);
+        list.innerHTML = `<div class="empty-state"><h3>Não foi possível carregar as devoluções.</h3></div>`;
+    }
 
     const requestButton = $("#requestReturnButton");
-    if (requestButton) {
-        requestButton.addEventListener("click", requestReturn);
-    }
+    if (requestButton) requestButton.addEventListener("click", requestReturn);
 }
 
-function renderReturnsPage() {
+function renderReturnsPage(returns = []) {
     const list = $("#returnsList");
-    const returns = getJson(RETURNS_KEY, []);
-
     if (!returns.length) {
         list.innerHTML = `<div class="empty-state"><h3>Nenhuma solicitação registrada.</h3><p class="muted">Você ainda não solicitou uma devolução.</p></div>`;
         return;
@@ -1320,6 +1349,7 @@ function renderReturnsPage() {
                 <strong>${item.id}</strong>
                 <p class="muted">Pedido ${item.orderId} · ${item.date}</p>
                 <p>Reembolso via ${item.method}</p>
+                ${item.reason ? `<p class="muted">Motivo: ${item.reason}</p>` : ""}
             </div>
             <div class="return-value">
                 <strong>${money(item.amount)}</strong>
@@ -1329,33 +1359,34 @@ function renderReturnsPage() {
     `).join("");
 }
 
-function requestReturn() {
-    const orders = getJson(ORDERS_KEY, []);
-    const delivered = orders.find((order) => order.status === "Entregue");
+async function requestReturn() {
+    try {
+        const orders = await getOrdersFromDatabase();
+        const delivered = orders.find((order) => order.status === "Entregue");
 
-    if (!delivered) {
-        alert("Não há pedidos entregues disponíveis para uma devolução.");
-        return;
+        if (!delivered) {
+            alert("Não há pedidos entregues disponíveis para uma devolução.");
+            return;
+        }
+
+        const reason = prompt("Qual o motivo da devolução?", "Não serviu");
+        if (!reason) return;
+
+        await createReturnInDatabase({
+            orderId: delivered.databaseId,
+            status: "Solicitação em análise",
+            amount: delivered.total,
+            method: delivered.paymentMethod || "Forma de pagamento original",
+            reason
+        });
+
+        const returns = await getReturnsFromDatabase();
+        renderReturnsPage(returns);
+        alert("Solicitação registrada no banco de dados com sucesso.");
+    } catch (error) {
+        console.error(error);
+        alert(`Não foi possível registrar a devolução: ${error.message}`);
     }
-
-    const reason = prompt("Qual o motivo da devolução?", "Não serviu");
-    if (!reason) {
-        return;
-    }
-
-    const returns = getJson(RETURNS_KEY, []);
-    returns.unshift({
-        id: `DEV-${Date.now()}`,
-        orderId: delivered.id,
-        status: "Solicitação em análise",
-        amount: delivered.total,
-        method: "Forma de pagamento original",
-        date: new Date().toLocaleDateString("pt-BR")
-    });
-
-    saveJson(RETURNS_KEY, returns);
-    renderReturnsPage();
-    alert("Solicitação registrada com sucesso.");
 }
 
 function initAccessibility() {
