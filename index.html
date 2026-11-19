@@ -29,18 +29,7 @@
                 <a href="paginas/produtos.html">Produtos</a>
                 <a href="paginas/produtos.html">Categorias <span>⌄</span></a>
                 <a href="paginas/perfil.html">Minha conta</a>
-                <div class="home-access-nav" id="accessibilityWidget">
-                    <button class="home-access-nav-btn" type="button" id="accessBtn" aria-expanded="false" aria-controls="accessPanel">♿ <span>Acessibilidade</span></button>
-                    <div class="access-panel home-access-nav-panel" id="accessPanel" aria-hidden="true">
-                        <div class="access-title">Recursos de acessibilidade</div>
-                        <button type="button" data-access-action="read">🔊 Ler o texto</button>
-                        <button type="button" data-access-action="links">🔗 Destacar links</button>
-                        <button type="button" data-access-action="font">A+ Aumentar</button>
-                        <button type="button" data-access-action="spacing">↔ Espaçamento</button>
-                        <button type="button" data-access-action="contrast">◐ Alto contraste</button>
-                        <button type="button" data-access-action="reset">↺ Restaurar</button>
-                    </div>
-                </div>
+
             </nav>
         </div>
     </header>
@@ -61,37 +50,21 @@
                 </div>
 
                 <div class="home-category-grid">
-                    <a class="home-category" href="paginas/produtos.html?categoria=Camisetas">
-                        <img src="img/camiseta_branca_estampa_vermelha.jpg" alt="Camisetas">
-                        <strong>Camisetas</strong><span>→</span>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Partes%20Inferiores">
+                        <img src="img/calca_jeans_baggy_azul.jpg" alt="Partes Inferiores">
+                        <strong>Partes Inferiores</strong><span>→</span>
                     </a>
-                    <a class="home-category" href="paginas/produtos.html?categoria=Polos">
-                        <img src="img/polo_cinza_grafica.jpg" alt="Polos">
-                        <strong>Polos</strong><span>→</span>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Partes%20Superiores">
+                        <img src="img/polo_cinza_grafica.jpg" alt="Partes Superiores">
+                        <strong>Partes Superiores</strong><span>→</span>
                     </a>
-                    <a class="home-category" href="paginas/produtos.html?categoria=Moletons">
-                        <img src="img/moletom_branco_basico.jpg" alt="Moletons">
-                        <strong>Moletons</strong><span>→</span>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Acessórios">
+                        <img src="img/cinto_vermelho.jpg" alt="Acessórios">
+                        <strong>Acessórios</strong><span>→</span>
                     </a>
-                    <a class="home-category" href="paginas/produtos.html?categoria=Calças">
-                        <img src="img/calca_jeans_baggy_azul.jpg" alt="Calças">
-                        <strong>Calças</strong><span>→</span>
-                    </a>
-                    <a class="home-category" href="paginas/produtos.html?categoria=Bermudas">
-                        <img src="img/bermuda_cargo_branca.jpg" alt="Bermudas">
-                        <strong>Bermudas</strong><span>→</span>
-                    </a>
-                    <a class="home-category" href="paginas/produtos.html?categoria=Jaquetas">
-                        <img src="img/jaqueta_corta_vento_preta_modelo.jpg" alt="Jaquetas">
-                        <strong>Jaquetas</strong><span>→</span>
-                    </a>
-                    <a class="home-category" href="paginas/produtos.html?categoria=Blusas">
-                        <img src="img/blusa_listrada_cinza_branca.jpg" alt="Blusas">
-                        <strong>Blusas</strong><span>→</span>
-                    </a>
-                    <a class="home-category" href="paginas/produtos.html?categoria=Suéteres">
-                        <img src="img/sueter_cinza_texturizado.jpg" alt="Suéteres">
-                        <strong>Suéteres</strong><span>→</span>
+                    <a class="home-category" href="paginas/produtos.html?categoria=Conjuntos">
+                        <img src="img/conjunto_rosa.jpg" alt="Conjuntos">
+                        <strong>Conjuntos</strong><span>→</span>
                     </a>
                 </div>
             </div>
@@ -137,6 +110,21 @@
         </div>
     </footer>
 
+
+    <div class="access" id="accessibilityWidget">
+        <button class="access-main" type="button" id="accessBtn" aria-expanded="false" aria-controls="accessPanel">
+            ♿ <span>Acessibilidade</span>
+        </button>
+        <div class="access-panel" id="accessPanel" aria-hidden="true">
+            <div class="access-title">Recursos de acessibilidade</div>
+            <button type="button" data-access-action="read">🔊 Ler o texto</button>
+            <button type="button" data-access-action="links">🔗 Destacar links</button>
+            <button type="button" data-access-action="font">A+ Aumentar</button>
+            <button type="button" data-access-action="spacing">↔ Espaçamento</button>
+            <button type="button" data-access-action="contrast">◐ Alto contraste</button>
+            <button type="button" data-access-action="reset">↺ Restaurar</button>
+        </div>
+    </div>
 
     <script src="js/produtos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
